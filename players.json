@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "name 1",
+    "age": 20,
+    "bio": "test bio 1"
+  },
+  {
+    "id": 2,
+    "name": "name 2",
+    "age": 22,
+    "bio": "test bio 2"
+  },
+  {
+    "id": 3,
+    "name": "name 3",
+    "age": 17,
+    "bio": "test bio 3"
+  },
+  {
+    "id": 4,
+    "name": "name 4",
+    "age": 19,
+    "bio": "test bio 4"
+  }
+]
