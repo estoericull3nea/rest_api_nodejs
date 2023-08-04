@@ -14,7 +14,7 @@ const getPlayers = async (req, res) => {
     res.end(JSON.stringify(player))
   } catch (error) {
     res.writeHead(500, { 'Content-Type': 'application/json' })
-    res.end(JSON.stringify({ error: `Something Went Wrong!` }))
+    res.end(JSON.stringify({ error: error.message }))
   }
 }
 
@@ -32,7 +32,7 @@ const getPlayer = async (req, res, id) => {
     res.end(JSON.stringify(player))
   } catch (error) {
     res.writeHead(500, { 'Content-Type': 'application/json' })
-    res.end(JSON.stringify({ error: `Something Went Wrong!` }))
+    res.end(JSON.stringify({ error: error.message }))
   }
 }
 
@@ -58,7 +58,7 @@ const createProduct = async (req, res, id) => {
     })
   } catch (error) {
     res.writeHead(500, { 'Content-Type': 'application/json' })
-    res.end(JSON.stringify({ error: `Something Went Wrong!` }))
+    res.end(JSON.stringify({ error: error.message }))
   }
 }
 
@@ -89,7 +89,7 @@ const updatePlayer = async (req, res, id) => {
     }
   } catch (error) {
     res.writeHead(500, { 'Content-Type': 'application/json' })
-    res.end(JSON.stringify({ error: `Something Went Wrong!` }))
+    res.end(JSON.stringify({ error: error.message }))
   }
 }
 
@@ -106,7 +106,7 @@ const deletePlayer = async (req, res, id) => {
     }
   } catch (error) {
     res.writeHead(500, { 'Content-Type': 'application/json' })
-    res.end(JSON.stringify({ error: `Something Went Wrong!` }))
+    res.end(JSON.stringify({ error: error.message }))
   }
 }
 
