@@ -3,6 +3,8 @@ const {
   getPlayers,
   getPlayer,
   createProduct,
+  updatePlayer,
+  deletePlayer,
 } = require('./controllers/player_controller')
 
 const server = http.createServer((req, res) => {
@@ -16,6 +18,18 @@ const server = http.createServer((req, res) => {
     getPlayer(req, res, id)
   } else if (req.url === '/api/players' && req.method === 'POST') {
     createProduct(req, res)
+  } else if (
+    req.url.match(/\/api\/players\/([0-9]+)/) &&
+    req.method === 'PUT'
+  ) {
+    const id = req.url.split('/')[3]
+    updatePlayer(req, res, id)
+  } else if (
+    req.url.match(/\/api\/players\/([0-9]+)/) &&
+    req.method === 'DELETE'
+  ) {
+    const id = req.url.split('/')[3]
+    deletePlayer(req, res, id)
   } else {
     res.writeHead(200, { 'Content-Type': 'application/json' })
     res.end(
